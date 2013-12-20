@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.apache.cassandra:cassandra-thrift:2.0.3'
+}
+
+task initdirs << {
+    sourceSets*.allSource.srcDirs.flatten()*.mkdirs()
+}
